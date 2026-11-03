@@ -2,3 +2,8 @@
 export function subtotal(items) {
   return items.reduce((sum, { price, qty }) => sum + price * qty, 0);
 }
+
+// 满减:小计达到 threshold 时减 off。
+export function applyDiscount(amount, { threshold, off }) {
+  return amount >= threshold ? amount - off : amount;
+}
